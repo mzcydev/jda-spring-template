@@ -22,7 +22,7 @@ public class JdaConfig {
     public JDA jda(List<ListenerAdapter> listeners) throws InterruptedException {
         JDA jda = JDABuilder.createDefault(properties.getToken())
                 .enableIntents(
-                        //TODO: add all intents
+                        GatewayIntent.getIntents(GatewayIntent.ALL_INTENTS)
                 )
                 .addEventListeners(listeners.toArray())
                 .build();
